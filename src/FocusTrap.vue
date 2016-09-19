@@ -18,9 +18,20 @@
         type: Boolean,
         default: false
       }, {
-        name: 'focusTrapOptions',
-        type: Object,
+        name: 'initialFocus',
         default: null
+      }, {
+        name: 'deactivateOnEsc',
+        type: Boolean,
+        default: true
+      }, {
+        name: 'deactivateOnOutsideClick',
+        type: Boolean,
+        default: false
+      }, {
+        name: 'returnFocusOnDeactivate',
+        type: Boolean,
+        default: true
       }
     ],
     data () {
@@ -33,15 +44,31 @@
     },
     beforeDestroy () {
       this.focusTrap.deactivate()
-      this.active = false
     },
     methods: {
       initFocusTrap () {
         this.setFocusTrap()
-        this.focusTrap.activate()
+
+        if (this.active) {
+          this.focusTrap.activate()
+        }
+        if (this.paused) {
+          this.focusTrap.pause()
+        }
       },
       setFocusTrap () {
-        this.$set('focusTrap', createFocusTrap(this.$el, this.focusTrapOptions))
+        this.$set('focusTrap', createFocusTrap(this.$el, {
+          onActivate () {
+            this.$emit('activated')
+          },
+          onDeactivate () {
+            this.$emit('deactivated')
+          },
+          initialFocus: this.initialFocus,
+          escapeDeactivates: this.deactivateOnEsc,
+          clickOutsideDeactivates: this.deactivateOnOutsideClick,
+          returnFocusOnDeactivate: this.returnFocusOnDeactivate
+        }))
       }
     },
     watch: {
