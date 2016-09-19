@@ -58,12 +58,8 @@
       },
       setFocusTrap () {
         this.$set('focusTrap', createFocusTrap(this.$el, {
-          onActivate () {
-            this.$emit('activated')
-          },
-          onDeactivate () {
-            this.$emit('deactivated')
-          },
+          onActivate: this.onActivate,
+          onDeactivate: this.onDeactivate,
           initialFocus: this.initialFocus,
           escapeDeactivates: this.deactivateOnEsc,
           clickOutsideDeactivates: this.deactivateOnOutsideClick,
@@ -85,6 +81,12 @@
         } else if (!oldVal && val) {
           this.focusTrap.pause()
         }
+      },
+      onActivate () {
+        this.$emit('activated')
+      },
+      onDeactivate () {
+        this.$emit('deactivated')
       }
     }
   }
