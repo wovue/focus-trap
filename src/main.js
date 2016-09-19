@@ -1,15 +1,15 @@
-import component from './component'
+import FocusTrap from './FocusTrap'
 
 let Vue = {}
 
-let FocusTrap = {
+let focusTrapPlugin = {
   install (_Vue) {
     Vue = _Vue
-    Vue.component('focus-trap', component)
+    Vue.component('wv-focus-trap', FocusTrap)
   }
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.component('focus-trap', FocusTrap)
+  window.Vue.component('wv-focus-trap', FocusTrap)
 }
-export default FocusTrap
+export default focusTrapPlugin

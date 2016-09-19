@@ -83,5 +83,8 @@
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0",
     "webpack-merge": "^0.8.3"
+  },
+  "dependencies": {
+    "focus-trap": "^2.0.1"
   }
 }
