@@ -33,6 +33,7 @@
     },
     beforeDestroy () {
       this.focusTrap.deactivate()
+      this.active = false
     },
     methods: {
       initFocusTrap () {
