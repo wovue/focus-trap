@@ -2,7 +2,7 @@
   <div>
     <sidebar></sidebar>
     <router-view></router-view>
-    <gh-corner v-transfer-dom repo-user="wovue" repo-name="focus-trap" color="#EAE8EB" background="#dd5a6f"></gh-corner>
+    <gh-corner v-transfer-dom repo-user="wovue" repo-name="focus-trap" color="#EAE8EB" background="#35495E"></gh-corner>
   </div>
 </template>
 

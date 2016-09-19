@@ -1,5 +1,5 @@
 {
-  "name": "focus-trap",
+  "name": "wovue-focus-trap",
   "version": "1.0.0",
   "description": "A Vue component that traps focus",
   "main": "dist/focus-trap.js",
