@@ -13,3 +13,4 @@ if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.component('wv-focus-trap', FocusTrap)
 }
 export default focusTrapPlugin
+export {FocusTrap}
