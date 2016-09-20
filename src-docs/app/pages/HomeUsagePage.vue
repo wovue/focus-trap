@@ -2,12 +2,11 @@
   <section class="c-main__sub-section">
     <h3 class="c-main__sub-heading u-gutter">Usage</h3>
     <div class="c-item u-gutter">
-      <h4 class="c-item__heading">Demo one</h4>
       <div class="c-item__description">
         <p>Default behavior: When this FocusTrap mounts (ready hook), the first element in its tab order receives focus.</p>
       </div>
       <h5 class="c-item__sub-heading">Code:</h5>
-      <div class="c-item__code-wrapper" v-html="snippets.demo01"></div>
+      <div class="c-item__code-wrapper" v-html="snippets.basic"></div>
       <h5 class="c-item__sub-heading">Result:</h5>
       <div class="c-play-around">
         <button @click="mountTrap1">activate trap</button>
@@ -21,7 +20,7 @@
 </template>
 
 <script>
-  import demo01 from 'src-docs/app/snippets/usage-demo-01.md'
+  import basic from 'src-docs/app/snippets/usage-basic.md'
 
   export default {
     name: 'HomeUsagePage',
@@ -30,7 +29,7 @@
         isTrap1Visible: false,
         isTrap1Active: true,
         snippets: {
-          demo01
+          basic
         }
       }
     },
@@ -51,6 +50,10 @@
     .box {
       border: 2px solid #41B883;
       padding: 1rem;
+
+      &--gray {
+        background-color: #EEEEEE;
+      }
     }
 
     a,

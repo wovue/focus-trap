@@ -21,7 +21,7 @@
             </li>
           </ul>
         </li>
-        <li class="c-sidebar__item c-sidebar__item--heading">
+        <!-- <li class="c-sidebar__item c-sidebar__item--heading">
           <a v-link="{name: 'Examples'}">Examples</a>
         </li>
         <li>
@@ -39,7 +39,7 @@
         </li>
         <li class="c-sidebar__item c-sidebar__item--heading">
           <a v-link="{name: 'DocsMarkdownExample'}">Markdown page boilerplate</a>
-        </li>
+        </li> -->
       </ul>
     </nav>
   </header>
