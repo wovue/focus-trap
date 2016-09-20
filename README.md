@@ -10,8 +10,8 @@ This component is a light wrapper around [focus-trap](https://github.com/davidth
 
 ## Features
 
-* The focus trap automatically activates in ready hook (by default, though this can be changed).
-* The focus trap automatically deactivates in destroyed hook.
+* The focus trap automatically activates on ready hook (by default, though this can be changed).
+* The focus trap automatically deactivates on destroyed hook.
 * The focus trap can be activated and deactivated, paused and unpaused via props.
 
 ## Getting Started
