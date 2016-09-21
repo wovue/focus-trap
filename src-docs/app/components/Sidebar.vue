@@ -21,20 +21,20 @@
             </li>
           </ul>
         </li>
-        <!-- <li class="c-sidebar__item c-sidebar__item--heading">
+        <li class="c-sidebar__item c-sidebar__item--heading">
           <a v-link="{name: 'Examples'}">Examples</a>
         </li>
         <li>
           <ul class="o-reset-list">
             <li class="c-sidebar__item c-sidebar__item--sub-heading">
-              <a v-link="{name: 'ExamplesDefaultPage', exact: true}">Default</a>
+              <a v-link="{name: 'ExamplesDefaultPage', exact: true}">A11Y Dialog</a>
             </li>
-            <li class="c-sidebar__item c-sidebar__item--sub-heading">
+            <!-- <li class="c-sidebar__item c-sidebar__item--sub-heading">
               <a v-link="{name: 'ExamplesPrimaryPage'}">Primary</a>
-            </li>
+            </li> -->
           </ul>
         </li>
-        <li class="c-sidebar__item c-sidebar__item--heading">
+        <!-- <li class="c-sidebar__item c-sidebar__item--heading">
           <a v-link="{name: 'DocsExample'}">Page boilerplate</a>
         </li>
         <li class="c-sidebar__item c-sidebar__item--heading">
