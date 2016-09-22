@@ -1,16 +1,22 @@
 ```html
-<button v-dialog:toggle="form">Open A11Y Dialog</button>
-<wv-dialog @closed="active = false" @opened="active = true" ref="form" class="form">
-  <wv-focus-trap :active="active" :deactivate-on-outside-click="true">
-    <p>Press tab</p>
+<button v-dialog:toggle="form-modal">Open A11Y Dialog</button>
+<wv-dialog
+  class="form-dialog"
+  @closed="active = false"
+  @opened="active = true"
+  ref="form-modal"
+  aria-labelledby="modal-title"
+>
+  <wv-focus-trap
+    class="form-dialog__content"
+    :active="active"
+    :deactivate-on-outside-click="true"
+  >
+    <h1 id="modal-title">Modal title</h1>
     <form @submit.prevent="onSubmit">
-      <div>
-        <input type="text" placeholder="Firstname">
-      </div>
-      <div>
-        <textarea name="name" placeholder="Message"></textarea>
-      </div>
-      <button type="submit">Submit</button>
+      <label>Name: <input required type="text" placeholder="Give me your name"></label>
+      <label>Email:<input required type="email" placeholder="Give me your email"></label>
+      <button type="submit" name="button">Submit</button>
     </form>
   </wv-focus-trap>
 </wv-dialog>

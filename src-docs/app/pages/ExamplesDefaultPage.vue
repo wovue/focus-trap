@@ -6,17 +6,23 @@
       <div class="c-item__code-wrapper" v-html="snippets.defaultExample"></div>
       <h5 class="c-item__sub-heading">Result:</h5>
       <div class="c-play-around">
-        <button v-dialog:toggle="form">Open A11Y Dialog</button>
-        <wv-dialog @closed="active = false" @opened="active = true" ref="form" class="form">
-          <wv-focus-trap :active="active" :deactivate-on-outside-click="true">
-            <p>Press tab</p>
+        <button v-dialog:toggle="form-modal">Open A11Y Dialog</button>
+        <wv-dialog
+          class="form-dialog"
+          @closed="active = false"
+          @opened="active = true"
+          ref="form-modal"
+          aria-labelledby="modal-title"
+        >
+          <wv-focus-trap
+            class="form-dialog__content"
+            :active="active"
+            :deactivate-on-outside-click="true"
+          >
+            <h1 id="modal-title">Modal title</h1>
             <form @submit.prevent="onSubmit">
-              <div>
-                <input tabindex="1" type="text" placeholder="Firstname">
-              </div>
-              <div>
-                <textarea name="name" rows="8" cols="40" placeholder="Message"></textarea>
-              </div>
+              <label>Name: <input required type="text" placeholder="Give me your name"></label>
+              <label>Email:<input required type="email" placeholder="Give me your email"></label>
               <button type="submit" name="button">Submit</button>
             </form>
           </wv-focus-trap>
@@ -48,21 +54,34 @@
 </script>
 
 <style lang="scss">
-  .form {
-    padding: 1rem;
+  .form-dialog {
+    text-align: center;
+    max-width: 600px;
+
+    p {
+      text-transform: uppercase;
+    }
 
     input,
     textarea {
       border: 2px solid #000;
-      margin: .5em 0;
+      display: block;
+      margin: 0 auto .5em;
+      max-width: 400px;
+      width: 100%;
     }
 
     input,
     textarea,
     button {
+
       &:focus {
         outline: 3px solid lightblue;
       }
     }
   }
+
+    .form-dialog__content {
+      padding: 1rem;
+    }
 </style>
