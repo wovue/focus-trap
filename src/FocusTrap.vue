@@ -8,38 +8,37 @@
   import createFocusTrap from './focus-trap.js'
 
   export default {
-    props: [
-      {
-        name: 'active',
+    props: {
+      active: {
         type: Boolean,
         default: true
-      }, {
-        name: 'paused',
+      },
+      paused: {
         type: Boolean,
         default: false
-      }, {
-        name: 'initialFocus',
+      },
+      initialFocus: {
         default: null
-      }, {
-        name: 'deactivateOnEsc',
+      },
+      deactivateOnEsc: {
         type: Boolean,
         default: true
-      }, {
-        name: 'deactivateOnOutsideClick',
+      },
+      deactivateOnOutsideClick: {
         type: Boolean,
         default: false
-      }, {
-        name: 'returnFocusOnDeactivate',
+      },
+      returnFocusOnDeactivate: {
         type: Boolean,
         default: true
       }
-    ],
+    },
     data () {
       return {
         focusTrap: null
       }
     },
-    ready () {
+    mounted () {
       this.initFocusTrap()
     },
     beforeDestroy () {
@@ -57,7 +56,7 @@
         }
       },
       setFocusTrap () {
-        this.$set('focusTrap', createFocusTrap(this.$el, {
+        this.$set(this, 'focusTrap', createFocusTrap(this.$el, {
           onActivate: this.onActivate,
           onDeactivate: this.onDeactivate,
           initialFocus: this.initialFocus,

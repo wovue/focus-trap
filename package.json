@@ -25,7 +25,7 @@
   },
   "homepage": "https://wovue.github.io/focus-trap",
   "peerDependencies": {
-    "vue": "^1.0.21"
+    "vue": "^2.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
