@@ -1,3 +1,8 @@
+> ## Vue 2
+
+> `$ npm install wovue-focus-trap@next --save`
+
+
 # FocusTrap
 
 > A Vue component that traps focus
